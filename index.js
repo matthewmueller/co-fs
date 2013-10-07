@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -61,7 +60,7 @@ var methods = [
 // wrap
 
 methods.forEach(function(name){
-  if (!fs[name]) throw new Error('fs.' + name + ' does not exist');
+  if (!fs[name]) return;
   exports[name] = wrap(fs[name]);
 });
 
